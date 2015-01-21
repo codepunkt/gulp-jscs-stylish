@@ -1,0 +1,41 @@
+{
+  "name": "gulp-jscs-stylish",
+  "version": "1.0.0",
+  "description": "Stylish reporter for gulp-jscs",
+  "license": "MIT",
+  "repository": "gonsfx/gulp-jscs-stylish",
+  "author": {
+    "name": "Christoph Werner",
+    "email": "gonsfx@googlemail.com",
+    "url": "http://twitter.com/gonsfx"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "jscs",
+    "reporter",
+    "code style",
+    "formatter",
+    "lint",
+    "linter",
+    "style guide",
+    "validate",
+    "stylish",
+    "elegant"
+  ],
+  "dependencies": {
+    "jshint-stylish": "^1.0.0",
+    "map-stream": "0.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  }
+}
