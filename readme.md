@@ -19,9 +19,9 @@ var noop = function () {};
 
 gulp.task('default', function () {
 	gulp.src([ 'file.js' ])
-		.pipe(jscs())
-		.on('error', noop)
-		.pipe(jscsStylish());
+		.pipe(jscs())         // enforce style guide
+		.on('error', noop)    // don't stop on error
+		.pipe(jscsStylish()); // log style errors
 });
 ```
 
