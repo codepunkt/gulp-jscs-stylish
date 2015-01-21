@@ -1,8 +1,12 @@
 # gulp-jscs-stylish
 
-Stylish reporter for [gulp-jscs](https://github.com/jscs-dev/gulp-jscs), uses [jshint-stylish](https://github.com/sindresorhus/jshint-stylish) to do the actual reporting.
+Stylish reporter for [gulp-jscs](https://github.com/jscs-dev/gulp-jscs), uses [jshint-stylish](https://github.com/sindresorhus/jshint-stylish) to do the actual reporting:
 
 ![screenshot](screenshot.png)
+
+Compared to the default output:
+
+![screenshot](screenshot2.png)
 
 ## Install
 
