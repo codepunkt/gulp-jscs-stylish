@@ -1,9 +1,8 @@
 # gulp-jscs-stylish
 
-> Stylish reporter for [gulp-jscs](https://github.com/jscs-dev/gulp-jscs)
-> Transforms errors, using [jshint-stylish](https://github.com/sindresorhus/jshint-stylish) to do the actual reporting.
+Stylish reporter for [gulp-jscs](https://github.com/jscs-dev/gulp-jscs), uses [jshint-stylish](https://github.com/sindresorhus/jshint-stylish) to do the actual reporting.
 
-
+![screenshot](screenshot.png)
 
 ## Install
 
