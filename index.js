@@ -2,9 +2,9 @@ var map = require('map-stream');
 var stylish = require(require('jshint-stylish'));
 
 function toJshint (errors) {
-	return errors.map(function (error) {
+	return file.jscs.errors.map(function (error) {
 		return {
-			file: error.filename,
+			file: file.base + error.filename,
 			error: {
 				character: error.column,
 				code: error.rule,
@@ -18,7 +18,7 @@ function toJshint (errors) {
 module.exports = function () {
 	return map(function (file, cb) {
 		if (file.jscs && file.jscs.errorCount) {
-			stylish.reporter(toJshint(file.jscs.errors));
+			stylish.reporter(toJshint(file));
 		}
 		cb(null, file);
 	});
