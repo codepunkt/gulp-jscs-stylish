@@ -31,7 +31,7 @@ gulp.task('default', function () {
 ```
 
 
-## Combine with JSHint
+## Combine results with those of JSHint
 
 ```js
 var jscs = require('gulp-jscs');
@@ -44,8 +44,8 @@ gulp.task('default', function () {
 		.pipe(jshint())                           // hint
 		.pipe(jscs())                             // enforce style guide
 		.on('error', noop)                        // don't stop on error
-		.pipe(stylish.combineWithHintResults())   // log style errors
-		.pipe(jshint.reporter('jshint-stylish')); // log hint and style guide errors
+		.pipe(stylish.combineWithHintResults())   // combine with jshint results
+		.pipe(jshint.reporter('jshint-stylish')); // use any jshint reporter to log hint and style guide errors
 });
 ````
 
