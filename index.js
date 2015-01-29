@@ -1,13 +1,28 @@
-var map = require('map-stream');
+var tap = require('gulp-tap');
 var stylish = require(require('jshint-stylish'));
 
-function toJshint (errors) {
+function byErrorLine (a, b) {
+	return a.error.line - b.error.line;
+}
+
+function tapJscs (action) {
+	return function () {
+		return tap(function (file) {
+			if (!file.jscs || file.jscs.success) {
+				return;
+			}
+			action(file);
+		});
+	};
+}
+
+function toJshint (file) {
 	return file.jscs.errors.map(function (error) {
 		return {
 			file: file.base + error.filename,
 			error: {
 				character: error.column,
-				code: error.rule,
+				code: 'W ' + error.rule,
 				line: error.line,
 				reason: error.message
 			}
@@ -15,11 +30,12 @@ function toJshint (errors) {
 	});
 }
 
-module.exports = function () {
-	return map(function (file, cb) {
-		if (file.jscs && file.jscs.errorCount) {
-			stylish.reporter(toJshint(file));
-		}
-		cb(null, file);
-	});
-};
+module.exports = tapJscs(function (file) {
+	stylish.reporter(toJshint(file));
+});
+
+module.exports.combineWithHintResults = tapJscs(function (file) {
+	file.jshint.success = false;
+	file.jshint.results = (file.jshint.results || []).concat(toJshint(file));
+	file.jshint.results.sort(byErrorLine);
+});

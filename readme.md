@@ -18,8 +18,9 @@ $ npm i --save-dev gulp-jscs-stylish
 ## Usage
 
 ```js
-var stylish = require('gulp-jscs-stylish');
+var jscs = require('gulp-jscs');
 var noop = function () {};
+var stylish = require('gulp-jscs-stylish');
 
 gulp.task('default', function () {
 	gulp.src([ 'file.js' ])
@@ -29,6 +30,24 @@ gulp.task('default', function () {
 });
 ```
 
+
+## Combine with JSHint
+
+```js
+var jscs = require('gulp-jscs');
+var jshint = require('gulp-jshint');
+var noop = function () {};
+var stylish = require('gulp-jscs-stylish');
+
+gulp.task('default', function () {
+	gulp.src([ 'file.js' ])
+		.pipe(jshint())                           // hint
+		.pipe(jscs())                             // enforce style guide
+		.on('error', noop)                        // don't stop on error
+		.pipe(stylish.combineWithHintResults())   // log style errors
+		.pipe(jshint.reporter('jshint-stylish')); // log hint and style guide errors
+});
+````
 
 ## License
 
