@@ -45,7 +45,8 @@ gulp.task('default', function () {
 		.pipe(jscs())                             // enforce style guide
 		.on('error', noop)                        // don't stop on error
 		.pipe(stylish.combineWithHintResults())   // combine with jshint results
-		.pipe(jshint.reporter('jshint-stylish')); // use any jshint reporter to log hint and style guide errors
+		.pipe(jshint.reporter('jshint-stylish')); // use any jshint reporter to log hint
+		                                          // and style guide errors
 });
 ````
 
