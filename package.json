@@ -32,9 +32,9 @@
     "elegant"
   ],
   "dependencies": {
-  },
-  "devDependencies": {
     "gulp-tap": "^0.1.3",
     "jshint-stylish": "^1.0.0"
+  },
+  "devDependencies": {
   }
 }
