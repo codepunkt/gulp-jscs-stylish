@@ -41,7 +41,7 @@ var stylish = require('gulp-jscs-stylish');
 
 gulp.task('default', function () {
 	gulp.src([ 'file.js' ])
-		.pipe(jshint())                           // hint
+		.pipe(jshint())                           // hint (optional)
 		.pipe(jscs())                             // enforce style guide
 		.on('error', noop)                        // don't stop on error
 		.pipe(stylish.combineWithHintResults())   // combine with jshint results
@@ -49,24 +49,7 @@ gulp.task('default', function () {
 		                                          // and style guide errors
 });
 ````
-
-## Use JSHint reporter without running JSHint
-
-```js
-var jscs = require('gulp-jscs');
-var jshint = require('gulp-jshint');
-var noop = function () {};
-var stylish = require('gulp-jscs-stylish');
-
-gulp.task('default', function () {
-	gulp.src([ 'file.js' ])
-		.pipe(jscs())                             // enforce style guide
-		.on('error', noop)                        // don't stop on error
-		.pipe(stylish.createHintResults())   // combine with jshint results
-		.pipe(jshint.reporter('jshint-stylish')); // use any jshint reporter to log hint
-		                                          // and style guide errors
-});
-````
+using `.pipe(jshint())` is optional. you may very well use the reporter without running jshint
 
 ## License
 

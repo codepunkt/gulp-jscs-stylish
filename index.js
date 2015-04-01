@@ -35,15 +35,7 @@ module.exports = tapJscs(function (file) {
 });
 
 module.exports.combineWithHintResults = tapJscs(function (file) {
-	file.jshint.success = false;
-	file.jshint.results = (file.jshint.results || []).concat(toJshint(file));
-	file.jshint.results.sort(byErrorLine);
-});
-
-module.exports.createHintResults = tapJscs(function (file) {
-	if (!file.jshint) {
-		file.jshint = {};
-	}
+	file.jshint = file.jshint || {};
 	file.jshint.success = false;
 	file.jshint.results = (file.jshint.results || []).concat(toJshint(file));
 	file.jshint.results.sort(byErrorLine);
