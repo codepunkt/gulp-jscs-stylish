@@ -1,5 +1,5 @@
 var tap = require('gulp-tap');
-var stylish = require(require('jshint-stylish'));
+var stylish = typeof require('jshint-stylish') === 'string' ? require(require('jshint-stylish')) : require('jshint-stylish');
 
 function byErrorLine (a, b) {
 	return a.error.line - b.error.line;
