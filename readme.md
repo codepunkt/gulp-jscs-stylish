@@ -25,7 +25,6 @@ var stylish = require('gulp-jscs-stylish');
 gulp.task('default', function () {
 	gulp.src([ 'file.js' ])
 		.pipe(jscs())      // enforce style guide
-		.on('error', noop) // don't stop on error
 		.pipe(stylish());  // log style errors
 });
 ```
@@ -43,7 +42,6 @@ gulp.task('default', function () {
 	gulp.src([ 'file.js' ])
 		.pipe(jshint())                           // hint (optional)
 		.pipe(jscs())                             // enforce style guide
-		.on('error', noop)                        // don't stop on error
 		.pipe(stylish.combineWithHintResults())   // combine with jshint results
 		.pipe(jshint.reporter('jshint-stylish')); // use any jshint reporter to log hint
 		                                          // and style guide errors
