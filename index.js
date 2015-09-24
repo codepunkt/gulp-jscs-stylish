@@ -17,7 +17,7 @@ function tapJscs (action) {
 }
 
 function toJshint (file) {
-	return file.jscs.errors.map(function (error) {
+	return file.jscs.errors._errorList.map(function (error) {
 		return {
 			file: file.base + error.filename,
 			error: {
