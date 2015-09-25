@@ -17,7 +17,11 @@ function tapJscs (action) {
 }
 
 function toJshint (file) {
-	return file.jscs.errors._errorList.map(function (error) {
+	// fetch error list
+	var errorList = file.jscs.errors._errorList || file.jscs.errors;
+
+	// map errors to jshint format
+	return errorList.map(function (error) {
 		return {
 			file: file.base + error.filename,
 			error: {
