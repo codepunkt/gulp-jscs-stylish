@@ -23,7 +23,7 @@ function toJshint (file) {
 	// map errors to jshint format
 	return errorList.map(function (error) {
 		return {
-			file: file.base + error.filename,
+			file: error.filename,
 			error: {
 				character: error.column,
 				code: 'W ' + error.rule,
