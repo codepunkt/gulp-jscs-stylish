@@ -1,3 +1,4 @@
+var path = require('path');
 var tap = require('gulp-tap');
 var stylish = typeof require('jshint-stylish') === 'string' ? require(require('jshint-stylish')) : require('jshint-stylish');
 
@@ -19,11 +20,12 @@ function tapJscs (action) {
 function toJshint (file) {
 	// fetch error list
 	var errorList = file.jscs.errors._errorList || file.jscs.errors;
+	var filePath = path.relative(process.cwd(), file.path);
 
 	// map errors to jshint format
 	return errorList.map(function (error) {
 		return {
-			file: error.filename,
+			file: filePath,
 			error: {
 				character: error.column,
 				code: 'W ' + error.rule,
