@@ -1,6 +1,6 @@
 {
   "name": "gulp-jscs-stylish",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Stylish reporter for gulp-jscs",
   "license": "MIT",
   "repository": "gonsfx/gulp-jscs-stylish",
