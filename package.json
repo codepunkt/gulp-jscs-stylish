@@ -3,12 +3,8 @@
   "version": "1.4.0",
   "description": "Stylish reporter for gulp-jscs",
   "license": "MIT",
-  "repository": "gonsfx/gulp-jscs-stylish",
-  "author": {
-    "name": "Christoph Werner",
-    "email": "gonsfx@googlemail.com",
-    "url": "http://twitter.com/gonsfx"
-  },
+  "repository": "codepunkt/gulp-jscs-stylish",
+  "author": "Christoph Werner <christoph+github@codepunkt.de>",
   "engines": {
     "node": ">=0.10.0"
   },
