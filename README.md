@@ -1,5 +1,9 @@
 # gulp-jscs-stylish
 
+[![NPM Version](https://img.shields.io/npm/v/gulp-jscs-stylish.svg?style=flat&label=NPM%20Version)](http://npm.im/gulp-jscs-stylish)
+[![Build Status](https://img.shields.io/npm/dm/gulp-jscs-stylish.svg?style=flat)](http://npm.im/gulp-jscs-stylish)
+[![MIT License](https://img.shields.io/npm/l/gulp-jscs-stylish.svg?style=flat&label=License)](http://opensource.org/licenses/MIT)
+
 Stylish reporter for [gulp-jscs](https://github.com/jscs-dev/gulp-jscs), uses [jshint-stylish](https://github.com/sindresorhus/jshint-stylish) to do the actual reporting:
 
 ![screenshot](screenshot.png)
