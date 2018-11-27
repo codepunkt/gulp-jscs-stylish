@@ -1,5 +1,8 @@
 # gulp-jscs-stylish
 
+> This repository and package is **no longer maintained**.
+> If you're interested in changes, updates or security fixes, please create a fork!
+
 [![NPM Version](https://img.shields.io/npm/v/gulp-jscs-stylish.svg?style=flat&label=NPM%20Version)](http://npm.im/gulp-jscs-stylish)
 [![Build Status](https://img.shields.io/npm/dm/gulp-jscs-stylish.svg?style=flat)](http://npm.im/gulp-jscs-stylish)
 [![MIT License](https://img.shields.io/npm/l/gulp-jscs-stylish.svg?style=flat&label=License)](http://opensource.org/licenses/MIT)
